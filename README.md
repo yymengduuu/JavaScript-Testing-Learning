@@ -5,6 +5,18 @@
 ```
 npm install --save-dev jest
 ```
+
+e.g.
+sum.js
+```
+module exports = myFunction;
+```
+
+sun.test.js
+```
+const myFunction = require(./sum)
+```
+
 ---
 
 ## Basic concept in testing
@@ -45,5 +57,14 @@ text('zero is truthy',() => {
 )
 ```
 
+- error handling
+
+```
+text('throws on invalid input',() => {
+  expect(() => {
+    myFunction(invalidInput);
+  }).toThrow();
+)
+```
 
 ---
