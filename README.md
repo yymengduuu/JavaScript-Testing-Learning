@@ -9,8 +9,9 @@ npm install --save-dev jest
 
 ## Basic concept in testing
 
-- toBe
 text(desciption, function)
+
+- toBe
 
 ```
 text('two plus two is four',() => {
@@ -24,8 +25,17 @@ text('two plus two is four',() => {
 test('object assignment', () => {
   const data = { one: 1};
   date['two'] = 2;
-  expect(data).yoEqual({ one:1, two:2 })
+  expect(data).toEqual({ one:1, two:2 });
 })
+```
+
+- truty & falsy
+  
+```
+text('null is falsy',() => {
+  const n = null;
+  expect(n).toBeFalsy();
+)
 ```
 
 
