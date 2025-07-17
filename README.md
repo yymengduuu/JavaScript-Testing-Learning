@@ -9,7 +9,7 @@ npm install --save-dev jest
 
 ## Basic concept in testing
 
-text(desciption, function)
+text ( desciption, function)
 
 - toBe
 
@@ -29,12 +29,19 @@ test('object assignment', () => {
 })
 ```
 
-- truty & falsy
+- truthy & falsy
   
 ```
-text('null is falsy',() => {
-  const n = null;
+text('zero is falsy',() => {
+  const n = 0;
   expect(n).toBeFalsy();
+)
+```
+
+```
+text('zero is truthy',() => {
+  const n = 1;
+  expect(n).toBeTruthy();
 )
 ```
 
