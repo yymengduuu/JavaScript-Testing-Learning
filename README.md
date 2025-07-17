@@ -7,12 +7,13 @@ npm install --save-dev jest
 ```
 
 e.g.
+
 sum.js
 ```
-module exports = myFunction;
+module. exports = myFunction;
 ```
 
-sun.test.js
+sum.test.js
 ```
 const myFunction = require(./sum)
 ```
@@ -66,5 +67,39 @@ text('throws on invalid input',() => {
   }).toThrow();
 )
 ```
+
+---
+
+## Testing Asynchronous Code
+
+sum.js
+
+```
+function fetchData (callback) {
+  setTimeout(() => {
+    callback('peanut butter')
+  }, 1000)
+}
+
+module. exports = fetchData;
+```
+
+sum.test.js
+
+```
+test('the data is peanut butter', done => {
+  function callback (data) {
+    try {
+      expect (data). toBe('peanut butter');
+      done ();
+    } catch (error) {
+        done (error);
+    }
+  }
+  fetchData(callback);
+})
+```
+
+
 
 ---
